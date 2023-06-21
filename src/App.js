@@ -1,11 +1,16 @@
 import './App.css';
-import CreditCard from './components/CreditCard';
-import Navbar from './components/Navbar';
+import CardForm from './components/CardForm/CardForm';
+import Navbar from './components/Navbar/Navbar';
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
 function App() {
   return (
     <>
-      <Navbar />
-      <CreditCard />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<CardForm />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
